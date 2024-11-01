@@ -3,7 +3,7 @@
 
 <head>
     <!-- 
-Materi kisi2 UAS  :
+Sumber Belajar  :
 
 Part 1 : https://www.malasngoding.com/membuat-crud-dengan-php-dan-mysqli-menampilkan-data/
 Part 2 : https://www.malasngoding.com/membuat-crud-dengan-php-dan-mysqli-input-data/ 
@@ -15,7 +15,7 @@ Sumber Belajar
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App</title>
+    <title>Spark. Support</title>
 </head>
 
 <body>
@@ -32,11 +32,19 @@ Sumber Belajar
 
         <br><br>
 
-        <table>
+        <table border="1">
             <tr>
                 <th>No</th>
-                <th>Activity</th>
-                <th>Check</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Jenjang Pendidikan</th>
+                <th>Jenis Kelamin</th>
+                <th colspan="4">Dari Mana Menemukan Website Ini</th>
+                <th>Pertanyaan 1</th>
+                <th>Pertanyaan 2</th>
+                <th>Pertanyaan 3</th>
+                <th>Pertanyaan 4</th>
+                <th>Saran</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -80,63 +88,3 @@ Sumber Belajar
 </body>
 
 </html>
-<style>
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        background-color: #f9f6f0;
-    }
-
-    .header{
-        background-color: #BDA672;
-        padding: 1rem;
-    }
-
-    .header-text{
-        text-align: center;
-        padding: 2rem;
-        color: white;
-    }
-
-    #instagram img{
-        border-radius: 20px;
-        height: 2rem;
-    }
-    #youtube img{
-        
-        height: 2.5rem;
-    }
-
-    .add-acti{
-        text-decoration: none;
-        color: blue;
-        text-align: center;
-    }
-    .add-acti:hover{
-        text-decoration: underline;
-        color: black;
-        text-align: center;
-    }
-
-    table{
-        border-collapse: collapse;
-        color: black;
-        margin: auto;
-    }
-
-    table td {
-        margin: 10px;
-        padding: 1rem;
-        border: 1px solid black;
-
-    }
-    .isi {
-        margin: auto;
-    }
-    .tambah{
-        text-align: center;
-    }
-</style>

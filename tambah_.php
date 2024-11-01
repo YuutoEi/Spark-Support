@@ -2,21 +2,24 @@
 include 'connection.php';
 
 //Menangkap data yang dikirim
-$name = $_POST['name'];
-$email = $_POST['email'];
-$jenjang_pendidikan = $_POST['jenjang_pendidikan'];
-$jenis_kelamin = $_POST['jenis_kelamin'];
-$kepuasan = $_POST['kepuasan'];
-$kepuasan1 = $_POST['kepuasan1'];
-$kepuasan2 = $_POST['kepuasan2'];
-$kepuasan3 = $_POST['kepuasan3'];
-$kepuasan4 = $_POST['kepuasan4'];
-$saran = $_POST['saran'];
+$Nama = $_POST['Nama'];
+$Email = $_POST['Email'];
+$JenjangPendidikan = $_POST['JenjangPendidikan'];
+$JenisKelamin = $_POST['JenisKelamin'];
+$Menemukan1 = $_POST['Menemukan1'];
+$Menemukan2 = $_POST['Menemukan2'];
+$Menemukan3 = $_POST['Menemukan3'];
+$Menemukan4 = $_POST['Menemukan4'];
+$Pertanyaan1 = $_POST['Pertanyaan1'];
+$Pertanyaan2 = $_POST['Pertanyaan2'];
+$Pertanyaan3 = $_POST['Pertanyaan3'];
+$Pertanyaan4 = $_POST['Pertanyaan4'];
+$Saran = $_POST['Saran'];
 
 
 
 //input ke data base
-mysqli_query($koneksi, "insert into support VALUES ('', '$name','$email','$jenjang_pendidikan','$jenis_kelamin','$kepuasan','$kepuasan1','$kepuasan1','$kepuasan2','$kepuasan3','$kepuasan4','$saran');");
+mysqli_query($koneksi, "insert into support VALUES ('', '$Nama','$Email','$JenjangPendidikan','$JenisKelamin','$Menemukan1','$Menemukan2','$Menemukan3','$Menemukan4','$Pertanyaan1','$Pertanyaan2','$Pertanyaan3','$Pertanyaan4','$Saran');");
 
 //kembali ke index.php
 header("location:index.php");

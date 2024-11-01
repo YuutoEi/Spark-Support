@@ -18,7 +18,7 @@
             $data = mysqli_query($koneksi, "select * from support where id='$id'");
             while ($d = mysqli_fetch_array($data)) {
             ?>
-                <form method="post" action="update.php">
+                <form method="post" action="edit_.php">
                     <table>
                         <tr>
                             <td>Kegiatan</td>
