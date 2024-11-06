@@ -1,87 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- 
-Sumber Belajar  :
-
-Part 1 : https://www.malasngoding.com/membuat-crud-dengan-php-dan-mysqli-menampilkan-data/
-Part 2 : https://www.malasngoding.com/membuat-crud-dengan-php-dan-mysqli-input-data/ 
-
-Sumber Belajar
-
-1. WPU : https://youtube.com/playlist?list=PLFIM0718LjIUqXfmEIBE3-uzERZPh3vp6&si=_WvOQv29dUI0VZid
-2. Buku di link : bit.ly/modultkj101 
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spark. Support</title>
+    <title>CRUD App</title>
 </head>
-
 <body>
-    
-    <div class="header">
-        <h1 class="header-text">TO DO LIST APP</h1>
-    </div>
-    
-    <div class="isi">
-
-        <div class="tambah">
-            <a class="add-acti" href="tambah.php">+ Add Activity</a>
+    <h1>Add Activity</h1>
+    <br>
+    <a href="index.php">Back</a>
+    <br><br>
+    <h3>Add Activity</h3>
+    <form method="post" action="tambah_.php">
+        <div class="Nama">
+          <label for="input-nama">Nama Lengkap :</label><br>
+          <input type="text" name="Nama" placeholder="nama..." id="input-nama" required /><br><br>
+          <label for="inputnama">Email :</label><br />
+          <input type="email" name="Email" placeholder="email..." id="input-nama" /><br>
         </div>
 
+        <br /><br />
+
+        <div class="jenjangPendidikan">
+          <label for="jenjang-pendidikan">Jenjang Pendidikan :</label><br>
+          <select name="JenjangPendidikan" id="jenjang_pendidikan">
+            <option value="sd">SD</option>
+            <option value="smp">SMP</option>
+            <option value="sma/smk">SMA/SMK</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+        </div>
+        
         <br><br>
+        
+        <div class="jenisKelamin">
+          <label for="jeniskelamin">Pilih Jenis Kelamin</label><br>
+          <input type="radio" name="JenisKelamin" id="jeniskelamin" value="laki-laki">
+          <label for="jeniskelamin">Laki - laki</label>
+          <input type="radio" name="JenisKelamin" id="jeniskelamin" value="Perempuan">
+          <label for="jeniskelamin">Perempuan</label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="menemukan-website">
+          <label for="menemukan">Dari mana Anda menemukan website ini?</label><br>
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="teman">
+          <label for="menemukan">Teman</label><br>
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="Keluarga">
+          <label for="menemukan">Keluarga</label><br>
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="guru">
+          <label for="menemukan">Guru</label><br>
+          <label for="lainnya">Lainnya</label>
+          <input type="text" placeholder="ketik disini..." name="Menemukan2" id="menemukan">
+        </div>
+        
+        <br>
+        <br>
+        <br>
 
-        <table border="1">
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Jenjang Pendidikan</th>
-                <th>Jenis Kelamin</th>
-                <th>Dari Mana Menemukan Website Ini</th>
-                <th>Pertanyaan 1</th>
-                <th>Pertanyaan 2</th>
-                <th>Pertanyaan 3</th>
-                <th>Pertanyaan 4</th>
-                <th>Saran</th>
-                <th>Action</th>
-            </tr>
-            <?php
-            include 'connection.php';
-            $no = 1;
-            $data = mysqli_query($koneksi, "select * from support");
-            while ($d = mysqli_fetch_array($data)) {
-            ?>
+        <div class="pertanyaan">
 
-                <tr>
-                    <td><?php echo $no++; ?></td>
-                    <td><?php echo $d['Nama'] ?></td>
-                    <td><?php echo $d['Email'] ?></td>
-                    <td><?php echo $d['JenjangPendidikan'] ?></td>
-                    <td><?php echo $d['JenisKelamin'] ?></td>
-                    <td><?php echo $d['Menemukan1']; echo ", ", $d['Menemukan2'] ?></td>
-                    <td><?php echo $d['Pertanyaan1'] ?></td>
-                    <td><?php echo $d['Pertanyaan2'] ?></td>
-                    <td><?php echo $d['Pertanyaan3'] ?></td>
-                    <td><?php echo $d['Pertanyaan4'] ?></td>
-                    <td><?php echo $d['Saran'] ?></td>
-                    <td>
-                        <a href="edit.php?id=<?php echo $d['id']; ?>">EDIT</a>
-                        <a href="hapus.php?id=<?php echo $d['id']; ?>">DELETE</a>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
+          <label for="kepuasan">Seberapa puas Anda dengan pengalaman menggunakan website kami?</label><br>
+          <input type="radio" name="Pertanyaan1" id="sangat-puas" value="s-puas">
+          <label for="s-puas">Sangat Puas</label><br>
+          <input type="radio" name="Pertanyaan1" id="puas" value="puas">
+          <label for="puas">Puas</label><br>
+          <input type="radio" name="Pertanyaan1" id="biasa-aja" value="b-aja">
+          <label for="b-aja">Biasa Saja</label><br>
+          <input type="radio" name="Pertanyaan1" id="tidak-puas" value="t-puas">
+          <label for="t-puas">Tidak Puas</label><br>
+          <input type="radio" name="Pertanyaan1" id="sangat-tidak-puas" value="st-puas">
+          <label for="st-puas">Sangat Tidak Puas</label><br>
+        </div>
+          
+        <br>
+        <br>
+        <br>
 
+        <div class="Pertanyaan2">
 
+          <label for="kepuasan2">Seberapa mudah Anda melihat tampilan website ini?</label><br>
+          <input type="radio" name="Pertanyaan2" id="sangat-puas" value="s-puas">
+          <label for="s-puas">Sangat Puas</label><br>
+          <input type="radio" name="Pertanyaan2" id="puas" value="puas">
+          <label for="puas">Puas</label><br>
+          <input type="radio" name="Pertanyaan2" id="biasa-aja" value="b-aja">
+          <label for="b-aja">Biasa Saja</label><br>
+          <input type="radio" name="Pertanyaan2" id="tidak-puas" value="t-puas">
+          <label for="t-puas">Tidak Puas</label><br>
+          <input type="radio" name="Pertanyaan2" id="sangat-tidak-puas" value="st-puas">
+          <label for="st-puas">Sangat Tidak Puas</label><br>
+        </div>
+          
+        <br>
+        <br>
+        <br>
+        
+        <div class="Pertanyaan3">
 
-    </div>
+          <label for="kepuasan3"></label>Apakah informasi yang disajikan mudah dimengerti?<br>
+          <input type="radio" name="Pertanyaan3" id="sangat-puas" value="s-puas">
+          <label for="s-puas">Sangat Puas</label><br>
+          <input type="radio" name="Pertanyaan3" id="puas" value="puas">
+          <label for="puas">Puas</label><br>
+          <input type="radio" name="Pertanyaan3" id="biasa-aja" value="b-aja">
+          <label for="b-aja">Biasa Saja</label><br>
+          <input type="radio" name="Pertanyaan3" id="tidak-puas" value="t-puas">
+          <label for="t-puas">Tidak Puas</label><br>
+          <input type="radio" name="Pertanyaan3" id="sangat-tidak-puas" value="st-puas">
+          <label for="st-puas">Sangat Tidak Puas</label><br>
+        </div>
+        
+        <br>
+        <br>
+        <br>
+        
+        <div class="Pertanyaan4">
 
+          <label for="kepuasan4">Bagaimana penilaian Anda terhadap website kami?</label><br>
+          <input type="radio" name="Pertanyaan4" id="sangat-puas" value="s-puas">
+          <label for="s-puas">Sangat Puas</label><br>
+          <input type="radio" name="Pertanyaan4" id="puas" value="puas">
+          <label for="puas">Puas</label><br>
+          <input type="radio" name="Pertanyaan4" id="biasa-aja" value="b-aja">
+          <label for="b-aja">Biasa Saja</label><br>
+          <input type="radio" name="Pertanyaan4" id="tidak-puas" value="t-puas">
+          <label for="t-puas">Tidak Puas</label><br>
+          <input type="radio" name="Pertanyaan4" id="sangat-tidak-puas" value="st-puas">
+          <label for="st-puas">Sangat Tidak Puas</label><br>
+        </div>
+        
+        <br>
+        <br>
+        <br>
 
-    </table>
+        <div class="Saran">
+          <label for="pesan-tambahan">Adakah pesan tambahan untuk kami?</label><br>
+          <textarea rows="5" cols="40" name="Saran" id="pesan-tambahan" placeholder="ketik disini...."></textarea>
+        </div>
+        <br>
 
+        <input type="submit" id="submit" value="SIMPAN">
+      </form>
 </body>
-
 </html>
