@@ -39,7 +39,7 @@ Sumber Belajar
                 <th>Email</th>
                 <th>Jenjang Pendidikan</th>
                 <th>Jenis Kelamin</th>
-                <th colspan="4">Dari Mana Menemukan Website Ini</th>
+                <th>Dari Mana Menemukan Website Ini</th>
                 <th>Pertanyaan 1</th>
                 <th>Pertanyaan 2</th>
                 <th>Pertanyaan 3</th>
@@ -61,9 +61,6 @@ Sumber Belajar
                     <td><?php echo $d['JenjangPendidikan'] ?></td>
                     <td><?php echo $d['JenisKelamin'] ?></td>
                     <td><?php echo $d['Menemukan1'] ?></td>
-                    <td><?php echo $d['Menemukan2'] ?></td>
-                    <td><?php echo $d['Menemukan3'] ?></td>
-                    <td><?php echo $d['Menemukan4'] ?></td>
                     <td><?php echo $d['Pertanyaan1'] ?></td>
                     <td><?php echo $d['Pertanyaan2'] ?></td>
                     <td><?php echo $d['Pertanyaan3'] ?></td>

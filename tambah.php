@@ -45,14 +45,14 @@
         <br>
         <div class="menemukan-website">
           <label for="menemukan">Dari mana Anda menemukan website ini?</label><br>
-          <input type="checkbox" name="Menemukan1" id="menemukan" value="teman">
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="teman">
           <label for="menemukan">Teman</label><br>
-          <input type="checkbox" name="Menemukan2" id="menemukan" value="Keluarga">
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="Keluarga">
           <label for="menemukan">Keluarga</label><br>
-          <input type="checkbox" name="Menemukan3" id="menemukan" value="guru">
+          <input type="checkbox" name="Menemukan1[]" id="menemukan" value="guru">
           <label for="menemukan">Guru</label><br>
           <label for="lainnya">Lainnya</label>
-          <input type="text" placeholder="ketik disini..." name="Menemukan4" id="menemukan">
+          <input type="text" placeholder="ketik disini..." name="Menemukan1[]" id="menemukan">
         </div>
         
         <br>
