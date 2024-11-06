@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2024 at 08:43 AM
+-- Generation Time: Nov 07, 2024 at 12:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,10 +33,8 @@ CREATE TABLE `support` (
   `Email` text NOT NULL,
   `JenjangPendidikan` text NOT NULL,
   `JenisKelamin` text NOT NULL,
-  `Menemukan1` text NOT NULL,
+  `Menemukan1` varchar(225) NOT NULL,
   `Menemukan2` text NOT NULL,
-  `Menemukan3` text NOT NULL,
-  `Menemukan4` text NOT NULL,
   `Pertanyaan1` text NOT NULL,
   `Pertanyaan2` text NOT NULL,
   `Pertanyaan3` text NOT NULL,
@@ -48,8 +46,8 @@ CREATE TABLE `support` (
 -- Dumping data for table `support`
 --
 
-INSERT INTO `support` (`id`, `Nama`, `Email`, `JenjangPendidikan`, `JenisKelamin`, `Menemukan1`, `Menemukan2`, `Menemukan3`, `Menemukan4`, `Pertanyaan1`, `Pertanyaan2`, `Pertanyaan3`, `Pertanyaan4`, `Saran`) VALUES
-(11, 'Ei', 'Ei@gmail.com', 'sd', 'laki-laki', '', 'Keluarga', '', '', 's-puas', 'b-aja', 'st-puas', 'st-puas', 'Halo kawan ayo kitasemua');
+INSERT INTO `support` (`id`, `Nama`, `Email`, `JenjangPendidikan`, `JenisKelamin`, `Menemukan1`, `Menemukan2`, `Pertanyaan1`, `Pertanyaan2`, `Pertanyaan3`, `Pertanyaan4`, `Saran`) VALUES
+(16, 'Dhandy Anadry Putra Darmanto', 'anadrydhandy@gmail.com', 'sma/smk', 'laki-laki', 'teman, guru', 'Sekolah', 'b-aja', 's-puas', 'st-puas', 't-puas', 'Bwahahahahaha');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +67,7 @@ ALTER TABLE `support`
 -- AUTO_INCREMENT for table `support`
 --
 ALTER TABLE `support`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

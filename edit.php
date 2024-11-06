@@ -21,10 +21,10 @@
             $d = mysqli_fetch_array($data);
             $DataMenemukan = explode(", ", $d['Menemukan1']);
             ?>
-                <form method="get" action="edit_.php">
+                <form method="post" action="edit_.php">
+                    <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
                     <div class="Nama">
                         <label for="input-nama">Nama Lengkap :</label><br>
-                        <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
                         <input type="text" name="Nama" id="input-nama" value="<?php echo $d['Nama']; ?>" required /><br><br>
                         <label for="inputnama">Email :</label><br />
                         <input type="email" name="Email" id="input-nama" value="<?php echo $d['Email'] ?>" required /><br>
@@ -39,7 +39,7 @@
                             <option value="sd" <?php if ($JenjangPendidikan == 'sd') echo "selected"; ?> >SD</option>
                             <option value="smp" <?php if ($JenjangPendidikan == 'smp') echo "selected"; ?> >SMP</option>
                             <option value="sma/smk" <?php if ($JenjangPendidikan == 'sma/smk') echo "selected"; ?> >SMA/SMK</option>
-                            <option value="lainnya" <?php if ($JenjangPendidikan == 'lainyya') echo "selected"; ?> >Lainnya</option>
+                            <option value="lainnya" <?php if ($JenjangPendidikan == 'lainnya') echo "selected"; ?> >Lainnya</option>
                         </select>
                     </div>
                     
@@ -152,7 +152,7 @@
 
                     <div class="Saran">
                         <label for="pesan-tambahan">Adakah pesan tambahan untuk kami?</label><br>
-                        <textarea rows="5" cols="40" name="Saran" id="pesan-tambahan" placeholder="<?php echo $d['Saran']; ?>" ></textarea>
+                        <textarea rows="5" cols="40" name="Saran" id="pesan-tambahan"><?php echo $d['Saran'] ?></textarea>
                     </div>
                     <br>
 
