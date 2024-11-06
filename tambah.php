@@ -52,7 +52,7 @@
           <input type="checkbox" name="Menemukan1[]" id="menemukan" value="guru">
           <label for="menemukan">Guru</label><br>
           <label for="lainnya">Lainnya</label>
-          <input type="text" placeholder="ketik disini..." name="Menemukan1[]" id="menemukan">
+          <input type="text" placeholder="ketik disini..." name="Menemukan2" id="menemukan">
         </div>
         
         <br>

@@ -19,7 +19,7 @@
             $id = $_GET['id'];
             $data = mysqli_query($koneksi, "select * from support where id='$id'");
             $d = mysqli_fetch_array($data);
-            $DataMenemukan = implode(", ", $d['Menemukan1']);
+            $DataMenemukan = explode(", ", $d['Menemukan1']);
             ?>
                 <form method="get" action="edit_.php">
                     <div class="Nama">
@@ -34,21 +34,23 @@
 
                     <div class="jenjangPendidikan">
                         <label for="jenjang-pendidikan">Jenjang Pendidikan :</label><br>
+                        <?php $JenjangPendidikan = $d['JenjangPendidikan'] ?>
                         <select name="JenjangPendidikan" id="jenjang_pendidikan">
-                            <option value="sd">SD</option>
-                            <option value="smp">SMP</option>
-                            <option value="sma/smk">SMA/SMK</option>
-                            <option value="lainnya">Lainnya</option>
+                            <option value="sd" <?php if ($JenjangPendidikan == 'sd') echo "selected"; ?> >SD</option>
+                            <option value="smp" <?php if ($JenjangPendidikan == 'smp') echo "selected"; ?> >SMP</option>
+                            <option value="sma/smk" <?php if ($JenjangPendidikan == 'sma/smk') echo "selected"; ?> >SMA/SMK</option>
+                            <option value="lainnya" <?php if ($JenjangPendidikan == 'lainyya') echo "selected"; ?> >Lainnya</option>
                         </select>
                     </div>
                     
                     <br><br>
                     
                     <div class="jenisKelamin">
+                        <?php $JenisKelamin = $d['JenisKelamin'] ?>
                         <label for="jeniskelamin">Pilih Jenis Kelamin</label><br>
-                        <input type="radio" name="JenisKelamin" id="jeniskelamin" value="laki-laki">
+                        <input type="radio" name="JenisKelamin" id="jeniskelamin" value="laki-laki" <?php if ($JenisKelamin == 'laki-laki') echo "checked"; ?> >
                         <label for="jeniskelamin">Laki - laki</label>
-                        <input type="radio" name="JenisKelamin" id="jeniskelamin" value="Perempuan">
+                        <input type="radio" name="JenisKelamin" id="jeniskelamin" value="Perempuan" <?php if ($JenisKelamin == 'Perempuan') echo "checked"; ?> >
                         <label for="jeniskelamin">Perempuan</label>
                     </div>
                     <br>
@@ -58,12 +60,12 @@
                         <label for="menemukan">Dari mana Anda menemukan website ini?</label><br>
                         <input type="checkbox" name="Menemukan1[]" id="menemukan" value="teman" <?php if (in_array("teman",$DataMenemukan)) echo "checked"; ?> >
                         <label for="menemukan">Teman</label><br>
-                        <input type="checkbox" name="Menemukan1[]" id="menemukan" value="Keluarga" <?php if (in_array("keluarga", $d)) echo "checked"; ?>>
+                        <input type="checkbox" name="Menemukan1[]" id="menemukan" value="Keluarga" <?php if (in_array("Keluarga", $DataMenemukan)) echo "checked"; ?>>
                         <label for="menemukan">Keluarga</label><br>
-                        <input type="checkbox" name="Menemukan1[]" id="menemukan" value="guru" <?php if (in_array("guru", $d)) echo "checked"; ?> >
+                        <input type="checkbox" name="Menemukan1[]" id="menemukan" value="guru" <?php if (in_array("guru", $DataMenemukan)) echo "checked"; ?> >
                         <label for="menemukan">Guru</label><br>
                         <label for="lainnya">Lainnya</label>
-                        <input type="text" placeholder="ketik disini..." name="Menemukan1[]" id="menemukan"  >
+                        <input type="text" placeholder="ketik disini..." name="Menemukan2" id="menemukan" value="<?php echo $d['Menemukan2'] ?>" >
                     </div>
                     
                     <br>
@@ -71,36 +73,37 @@
                     <br>
 
                     <div class="pertanyaan">
-
+                        <?php $perta1 = $d['Pertanyaan1'] ?>
                         <label for="kepuasan">Seberapa puas Anda dengan pengalaman menggunakan website kami?</label><br>
-                        <input type="radio" name="Pertanyaan1" id="sangat-puas" value="s-puas">
+                        <input type="radio" name="Pertanyaan1" id="sangat-puas" value="s-puas" <?php if ($perta1 == "s-puas") echo "checked" ?> >
                         <label for="s-puas">Sangat Puas</label><br>
-                        <input type="radio" name="Pertanyaan1" id="puas" value="puas">
+                        <input type="radio" name="Pertanyaan1" id="puas" value="puas" <?php if ($perta1 == "puas") echo "checked" ?>>
                         <label for="puas">Puas</label><br>
-                        <input type="radio" name="Pertanyaan1" id="biasa-aja" value="b-aja">
+                        <input type="radio" name="Pertanyaan1" id="biasa-aja" value="b-aja" <?php if ($perta1 == "b-aja") echo "checked" ?>>
                         <label for="b-aja">Biasa Saja</label><br>
-                        <input type="radio" name="Pertanyaan1" id="tidak-puas" value="t-puas">
+                        <input type="radio" name="Pertanyaan1" id="tidak-puas" value="t-puas" <?php if ($perta1 == "t-puas") echo "checked" ?>>
                         <label for="t-puas">Tidak Puas</label><br>
-                        <input type="radio" name="Pertanyaan1" id="sangat-tidak-puas" value="st-puas">
+                        <input type="radio" name="Pertanyaan1" id="sangat-tidak-puas" value="st-puas" <?php if ($perta1 == "st-puas") echo "checked" ?> >
                         <label for="st-puas">Sangat Tidak Puas</label><br>
                     </div>
                     
                     <br>
                     <br>
                     <br>
-
+                    
                     <div class="Pertanyaan2">
-
+                        
+                        <?php $perta2 = $d['Pertanyaan2'] ?>
                         <label for="kepuasan2">Seberapa mudah Anda melihat tampilan website ini?</label><br>
-                        <input type="radio" name="Pertanyaan2" id="sangat-puas" value="s-puas">
+                        <input type="radio" name="Pertanyaan2" id="sangat-puas" value="s-puas" <?php if ($perta2 == "s-puas") echo "checked" ?> >
                         <label for="s-puas">Sangat Puas</label><br>
-                        <input type="radio" name="Pertanyaan2" id="puas" value="puas">
+                        <input type="radio" name="Pertanyaan2" id="puas" value="puas" <?php if ($perta2 == "puas") echo "checked" ?>>
                         <label for="puas">Puas</label><br>
-                        <input type="radio" name="Pertanyaan2" id="biasa-aja" value="b-aja">
+                        <input type="radio" name="Pertanyaan2" id="biasa-aja" value="b-aja" <?php if ($perta2 == "b-aja") echo "checked" ?>>
                         <label for="b-aja">Biasa Saja</label><br>
-                        <input type="radio" name="Pertanyaan2" id="tidak-puas" value="t-puas">
+                        <input type="radio" name="Pertanyaan2" id="tidak-puas" value="t-puas" <?php if ($perta2 == "t-puas") echo "checked" ?>>
                         <label for="t-puas">Tidak Puas</label><br>
-                        <input type="radio" name="Pertanyaan2" id="sangat-tidak-puas" value="st-puas">
+                        <input type="radio" name="Pertanyaan2" id="sangat-tidak-puas" value="st-puas" <?php if ($perta2 == "st-puas") echo "checked" ?> >
                         <label for="st-puas">Sangat Tidak Puas</label><br>
                     </div>
                     
@@ -109,17 +112,18 @@
                     <br>
                     
                     <div class="Pertanyaan3">
-
+                        <?php $perta3 = $d['Pertanyaan3'] ?>
+                        
                         <label for="kepuasan3"></label>Apakah informasi yang disajikan mudah dimengerti?<br>
-                        <input type="radio" name="Pertanyaan3" id="sangat-puas" value="s-puas">
+                        <input type="radio" name="Pertanyaan3" id="sangat-puas" value="s-puas" <?php if ($perta3 == "s-puas") echo "checked" ?> >
                         <label for="s-puas">Sangat Puas</label><br>
-                        <input type="radio" name="Pertanyaan3" id="puas" value="puas">
+                        <input type="radio" name="Pertanyaan3" id="puas" value="puas" <?php if ($perta3 == "puas") echo "checked" ?>>
                         <label for="puas">Puas</label><br>
-                        <input type="radio" name="Pertanyaan3" id="biasa-aja" value="b-aja">
+                        <input type="radio" name="Pertanyaan3" id="biasa-aja" value="b-aja" <?php if ($perta3 == "b-aja") echo "checked" ?>>
                         <label for="b-aja">Biasa Saja</label><br>
-                        <input type="radio" name="Pertanyaan3" id="tidak-puas" value="t-puas">
+                        <input type="radio" name="Pertanyaan3" id="tidak-puas" value="t-puas" <?php if ($perta3 == "t-puas") echo "checked" ?>>
                         <label for="t-puas">Tidak Puas</label><br>
-                        <input type="radio" name="Pertanyaan3" id="sangat-tidak-puas" value="st-puas">
+                        <input type="radio" name="Pertanyaan3" id="sangat-tidak-puas" value="st-puas" <?php if ($perta3 == "st-puas") echo "checked" ?> >
                         <label for="st-puas">Sangat Tidak Puas</label><br>
                     </div>
                     
@@ -128,17 +132,17 @@
                     <br>
                     
                     <div class="Pertanyaan4">
-
-                        <label for="kepuasan4">Bagaimana penilaian Anda terhadap website kami?</label><br>
-                        <input type="radio" name="Pertanyaan4" id="sangat-puas" value="s-puas">
+                        <?php $perta4 = $d['Pertanyaan4'] ?>
+                        
+                        <input type="radio" name="Pertanyaan4" id="sangat-puas" value="s-puas" <?php if ($perta4 == "s-puas") echo "checked" ?> >
                         <label for="s-puas">Sangat Puas</label><br>
-                        <input type="radio" name="Pertanyaan4" id="puas" value="puas">
+                        <input type="radio" name="Pertanyaan4" id="puas" value="puas" <?php if ($perta4 == "puas") echo "checked" ?>>
                         <label for="puas">Puas</label><br>
-                        <input type="radio" name="Pertanyaan4" id="biasa-aja" value="b-aja">
+                        <input type="radio" name="Pertanyaan4" id="biasa-aja" value="b-aja" <?php if ($perta4 == "b-aja") echo "checked" ?>>
                         <label for="b-aja">Biasa Saja</label><br>
-                        <input type="radio" name="Pertanyaan4" id="tidak-puas" value="t-puas">
+                        <input type="radio" name="Pertanyaan4" id="tidak-puas" value="t-puas" <?php if ($perta4 == "t-puas") echo "checked" ?>>
                         <label for="t-puas">Tidak Puas</label><br>
-                        <input type="radio" name="Pertanyaan4" id="sangat-tidak-puas" value="st-puas">
+                        <input type="radio" name="Pertanyaan4" id="sangat-tidak-puas" value="st-puas" <?php if ($perta4 == "st-puas") echo "checked" ?> >
                         <label for="st-puas">Sangat Tidak Puas</label><br>
                     </div>
                     

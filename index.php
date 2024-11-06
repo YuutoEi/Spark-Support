@@ -60,7 +60,7 @@ Sumber Belajar
                     <td><?php echo $d['Email'] ?></td>
                     <td><?php echo $d['JenjangPendidikan'] ?></td>
                     <td><?php echo $d['JenisKelamin'] ?></td>
-                    <td><?php echo $d['Menemukan1'] ?></td>
+                    <td><?php echo $d['Menemukan1']; echo ", ", $d['Menemukan2'] ?></td>
                     <td><?php echo $d['Pertanyaan1'] ?></td>
                     <td><?php echo $d['Pertanyaan2'] ?></td>
                     <td><?php echo $d['Pertanyaan3'] ?></td>
