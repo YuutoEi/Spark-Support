@@ -8,7 +8,7 @@
 <body>
     <h1>Add Activity</h1>
     <br>
-    <a href="index.php">Back</a>
+    <a href="showData.php">Show Data</a>
     <br><br>
     <h3>Add Activity</h3>
     <form method="post" action="tambah_.php">

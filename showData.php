@@ -27,7 +27,7 @@ Sumber Belajar
     <div class="isi">
 
         <div class="tambah">
-            <a class="add-acti" href="tambah.php">+ Add Activity</a>
+            <a class="add-acti" href="index.php">+ Add Response</a>
         </div>
 
         <br><br>

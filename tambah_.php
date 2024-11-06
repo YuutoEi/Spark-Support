@@ -20,7 +20,7 @@ $Saran = $_POST['Saran'];
 mysqli_query($koneksi, "insert into support VALUES ('', '$Nama','$Email','$JenjangPendidikan','$JenisKelamin','$Menemukan1', '$Menemukan2', '$Pertanyaan1','$Pertanyaan2','$Pertanyaan3','$Pertanyaan4','$Saran');");
 
 //kembali ke index.php
-header("location:index.php");
+header("location:showData.php");
 
 
 ?>
