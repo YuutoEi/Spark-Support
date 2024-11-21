@@ -16,18 +16,21 @@ Sumber Belajar
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spark. Support</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     
     <div class="header">
-        <h1 class="header-text">TO DO LIST APP</h1>
+        <h1 class="header-text">SPARK DATABASE MANAGEMENT</h1>
+        <img src="spark._20240926_113859_0000.png" alt="ini logo spark">
     </div>
+    <hr>
     
     <div class="isi">
 
         <div class="tambah">
-            <a class="add-acti" href="index.php">+ Add Response</a>
+        <button> <a class="add-acti" href="index.php">+ Add Response</a> </button>
         </div>
 
         <br><br>
